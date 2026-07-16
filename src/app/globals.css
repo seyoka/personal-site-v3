@@ -1,26 +1,355 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #e8dcc0;
+  --foreground: #000000;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: Helvetica, Arial, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  scroll-behavior: smooth;
 }
 
 body {
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, Arial, system-ui, sans-serif;
+  font-synthesis: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.paper-page {
+  min-height: 100svh;
+  overflow-x: clip;
+  background: #e8dcc0;
+}
+
+.paper-stage {
+  position: relative;
+  width: min(100vw, 1728px);
+  min-height: clamp(1180px, 180vw, 3310px);
+  margin: 0 auto;
+  overflow: clip;
+  background: #e8dcc0;
+}
+
+.paper-text {
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  color: #000;
+  font-family: Helvetica, Arial, system-ui, sans-serif;
+  font-size: clamp(2.4rem, 5.8vw, 6.25rem);
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 1.2;
+}
+
+.paper-image {
+  position: absolute;
+  z-index: 1;
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.paper-image-top {
+  top: 0;
+  left: 33.16%;
+  width: 39.29%;
+  aspect-ratio: 679 / 540;
+}
+
+.paper-hello {
+  top: 6.34%;
+  left: 8.28%;
+}
+
+.paper-name-mark {
+  top: 15.44%;
+  left: 6.89%;
+  width: 10.01%;
+  aspect-ratio: 173 / 189;
+}
+
+.paper-love {
+  top: 11.81%;
+  left: 8.28%;
+  width: 88.66%;
+}
+
+.paper-s26 {
+  top: 16.5%;
+  left: 17.71%;
+}
+
+.paper-intern {
+  top: 20.79%;
+  left: 8.28%;
+}
+
+.paper-company-mark {
+  top: 19.27%;
+  left: 43%;
+  width: 19.16%;
+  aspect-ratio: 331 / 220;
+}
+
+.paper-hero-photo {
+  top: 12.66%;
+  left: 38.43%;
+  width: 160.19%;
+  aspect-ratio: 2768 / 1597;
+}
+
+.paper-work {
+  position: absolute;
+  inset: 0;
+}
+
+.paper-work-title {
+  top: 66.01%;
+  left: 6.89%;
+}
+
+.paper-patch-photo {
+  top: 69.97%;
+  left: 36.92%;
+  width: 8.85%;
+  aspect-ratio: 153 / 139;
+}
+
+.paper-patch {
+  top: 70.69%;
+  left: 6.77%;
+}
+
+.paper-cofounder {
+  top: 76.16%;
+  left: 6.89%;
+}
+
+.paper-cofounder-mark {
+  top: 76.16%;
+  left: 41.38%;
+  width: 29.28%;
+  aspect-ratio: 506 / 120;
+}
+
+.paper-carbon {
+  top: 81.06%;
+  left: 6.77%;
+}
+
+.paper-blueprints {
+  top: 86.68%;
+  left: 6.77%;
+}
+
+.paper-currently {
+  top: 92.63%;
+  left: 6.77%;
+  width: 88%;
+}
+
+@media (max-width: 900px) {
+  .paper-stage {
+    width: 100vw;
+    min-height: 1700px;
+  }
+
+  .paper-text {
+    font-size: clamp(2.1rem, 9.5vw, 5rem);
+    letter-spacing: -0.07em;
+  }
+
+  .paper-image-top {
+    left: 48%;
+    width: 52%;
+  }
+
+  .paper-love {
+    top: 13.5%;
+    width: 86%;
+  }
+
+  .paper-name-mark {
+    top: 20.5%;
+    width: 15%;
+  }
+
+  .paper-s26 {
+    top: 21.8%;
+    left: 23%;
+  }
+
+  .paper-intern {
+    top: 27%;
+  }
+
+  .paper-company-mark {
+    top: 26%;
+    left: 54%;
+    width: 31%;
+  }
+
+  .paper-hero-photo {
+    top: 33%;
+    left: 23%;
+    width: 160%;
+  }
+
+  .paper-work-title {
+    top: 58%;
+  }
+
+  .paper-patch {
+    top: 63.5%;
+  }
+
+  .paper-patch-photo {
+    top: 62.8%;
+    left: 47%;
+    width: 14%;
+  }
+
+  .paper-cofounder {
+    top: 70%;
+  }
+
+  .paper-cofounder-mark {
+    top: 70.5%;
+    left: 52%;
+    width: 38%;
+  }
+
+  .paper-carbon {
+    top: 76.5%;
+  }
+
+  .paper-blueprints {
+    top: 82.5%;
+  }
+
+  .paper-currently {
+    top: 90%;
+  }
+}
+
+@media (max-width: 560px) {
+  .paper-stage {
+    min-height: 1260px;
+  }
+
+  .paper-text {
+    font-size: clamp(1.95rem, 10.8vw, 3.75rem);
+  }
+
+  .paper-hello,
+  .paper-love,
+  .paper-intern {
+    left: 6%;
+  }
+
+  .paper-hello {
+    top: 7%;
+  }
+
+  .paper-image-top {
+    left: 42%;
+    width: 68%;
+  }
+
+  .paper-love {
+    top: 15.5%;
+    width: 92%;
+  }
+
+  .paper-name-mark {
+    top: 23%;
+    left: 6%;
+    width: 18%;
+  }
+
+  .paper-s26 {
+    top: 24.4%;
+    left: 26%;
+  }
+
+  .paper-intern {
+    top: 31%;
+  }
+
+  .paper-company-mark {
+    top: 30.2%;
+    left: 56%;
+    width: 38%;
+  }
+
+  .paper-hero-photo {
+    top: 37%;
+    left: 12%;
+    width: 185%;
+  }
+
+  .paper-work-title,
+  .paper-patch,
+  .paper-cofounder,
+  .paper-carbon,
+  .paper-blueprints,
+  .paper-currently {
+    left: 6%;
+  }
+
+  .paper-work-title {
+    top: 57%;
+  }
+
+  .paper-patch {
+    top: 62.5%;
+  }
+
+  .paper-patch-photo {
+    top: 62%;
+    left: 56%;
+    width: 18%;
+  }
+
+  .paper-cofounder {
+    top: 69%;
+  }
+
+  .paper-cofounder-mark {
+    top: 69.7%;
+    left: 54%;
+    width: 42%;
+  }
+
+  .paper-carbon {
+    top: 75%;
+  }
+
+  .paper-blueprints {
+    top: 81%;
+  }
+
+  .paper-currently {
+    top: 89%;
+    width: 88%;
+  }
 }
